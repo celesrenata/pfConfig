@@ -1,0 +1,134 @@
+{
+  "general":
+  {
+    "hostname": "renata",
+    "domain": "celestium.life",
+    "ip_address": "192.168.44.1"
+  },
+  "search_and_replace": {
+    "example": {
+      "tag": "tag signifies the xml subgroup used for where data is ultimately being modified",
+      "plugins": "currently we only support base64 and null as options",
+      "xml_string": "What values you want to modify, such as dhcp options, wireguard tunnels, filer file data, etc",
+      "some_string_search": "you can add additional search and replace parameters",
+      "some_string_replace": "as long as you leave it in this format with the _search and the _replace as the final substring"
+    },
+    "firewall_rules": {
+      "tag": null,
+      "plugins": [
+        null
+      ],
+      "xml_string": "./nat/outbound/rule/source/network",
+      "source_network_search": "192.168.5.0/24",
+      "source_network_replace": "192.168.44.0/24"
+    },
+    "filer_data": {
+      "tag": "filedata",
+      "plugins": [
+        "base64"
+      ],
+      "xml_string": "./installedpackages/filer/config",
+      "gateway_search": "192.168.5.1",
+      "gateway_replace": "192.168.44.1"
+    },
+    "user_data": {
+      "tag": "name",
+      "plugins": [
+        null
+      ],
+      "xml_string": "./system/user",
+      "username_search": "CONFIG_USER",
+      "username_replace": "USER"
+    },
+    "wireguard_tunnel_private_key": {
+      "tag": "privatekey",
+      "plugins": [
+        null
+        ],
+      "xml_string": "./installedpackages/wireguard/tunnels/item",
+      "nord_private_key_search": "NORD_PRIVATE_KEY",
+      "nord_private_key_replace": "NORD_PRIVATE_KEY",
+      "surf_private_key_search": "SURF_PRIVATE_KEY",
+      "surf_private_key_replace": "SURF_PRIVATE_KEY",
+      "mull_private_key_search": "MULL_PRIVATE_KEY",
+      "mull_private_key_replace": "MULL_PRIVATE_KEY"
+    },
+    "wireguard_tunnel_public_key": {
+      "tag": "publickey",
+      "plugins": [
+        null
+        ],
+      "xml_string": "./installedpackages/wireguard/tunnels/item",
+      "nord_public_key_search": "NORD_PUBLIC_KEY",
+      "nord_public_key_replace": "NORD_PUBLIC_KEY",
+      "surf_public_key_search": "SURF_PUBLIC_KEY",
+      "surf_public_key_replace": "SURF_PUBLIC_KEY",
+      "mull_public_key_search": "MULL_PUBLIC_KEY",
+      "mull_public_key_replace": "MULL_PUBLIC_KEY"
+    },
+    "wireguard_tunnel_mtu": {
+      "tag": "mtu",
+      "plugins": [
+        null
+      ],
+      "xml_string": "./installedpackages/wireguard/tunnels/item",
+      "nord_mtu_search": "NORD_MTU",
+      "nord_mtu_replace": "1500",
+      "surf_mtu_search": "SURF_MTU",
+      "surf_mtu_replace": "1420",
+      "mull_mtu_search": "MULL_MTU",
+      "mull_mtu_replace": "1500"
+    },
+    "wireguard_peer_public_key": {
+      "tag": "publickey",
+      "plugins": [
+        null
+        ],
+      "xml_string": "./installedpackages/wireguard/peers/item",
+      "nord_public_key_search": "NORD_PUBLIC_KEY",
+      "nord_public_key_replace": "NORD_PUBLIC_KEY",
+      "surf_public_key_search": "SURF_PUBLIC_KEY",
+      "surf_public_key_replace": "SURF_PUBLIC_KEY",
+      "mull_public_key_search": "MULL_PUBLIC_KEY",
+      "mull_public_key_replace": "MULL_PUBLIC_KEY"
+    },
+    "wireguard_mull_endpoint": {
+      "tag": "endpoint",
+      "plugins": [
+        null
+      ],
+      "xml_string": "./installedpackages/wireguard/peers/item",
+      "mullvad_endpoint_search": "MULLVAD_ENDPOINT",
+      "mullvad_endpoint_replace": "MULLVAD_ENDPOINT"
+    },
+    "dhcp_options": {
+      "tag": "value",
+      "plugins": [
+        null
+      ],
+      "xml_string": "./dhcp/lan/numberoptions/item",
+      "nfs_search": "192.168.5.1",
+      "nfs_replace": "192.168.44.8"
+    },
+    "dhcp_range_from": {
+      "tag": null,
+      "plugins": [
+        null
+      ],
+      "xml_string": "./dhcp/lan/range",
+      "range_start_search": "RANGE_START",
+      "range_start_replace": "192.168.44.100",
+      "range_end_search": "RANGE_END",
+      "range_end_replace": "192.168.44.200"
+    },
+    "next_server": {
+      "tag": null,
+      "plugins": [
+        null
+      ],
+      "xml_string": "./dhcp/lan/nextserver",
+      "tftp_server_search": "NEXT-SERVER",
+      "tftp_server_replace": "192.168.44.9"
+    }
+  }
+}

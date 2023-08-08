@@ -1,0 +1,19 @@
+{
+    "general":
+    {
+        "settings":
+        {
+            "log_dir": "/var/logs/pfConfig"
+        },
+        "prerequisites":
+        [
+            "vim",
+            "curl"
+        ],
+        "active_tests":
+        [
+            "sudo"
+        ]
+        
+    }
+}

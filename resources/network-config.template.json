@@ -1,0 +1,164 @@
+{
+  "search_and_replace": {
+    "example": {
+      "tag": "tag signifies the xml subgroup used for where data is ultimately being modified",
+      "plugins": "currently we only support base64 and null as options",
+      "xml_string": "What values you want to modify, such as dhcp options, wireguard tunnels, filer file data, etc",
+      "some_string_search": "you can add additional search and replace parameters",
+      "some_string_replace": "as long as you leave it in this format with the _search and the _replace as the final substring"
+    },
+    "system_hostname": {
+      "tag": null,
+      "plugins": [
+        null
+      ],
+      "xml_string": "./system/hostname",
+      "hostname_search": "HOSTNAME",
+      "hostname_replace": "varHOSTNAME"
+    },
+    "system_domain": {
+      "tag": null,
+      "plugins": [
+        null
+      ],
+      "xml_string": "./system/domain",
+      "hostname_search": "DOMAIN",
+      "hostname_replace": "varDOMAIN"
+    },
+    "interface_lan_ipaddress": {
+      "tag": null,
+      "plugins": [
+        null
+      ],
+      "xml_string": "./interfaces/lan/ipaddr",
+      "hostname_search": "HOSTIPADDRESS",
+      "hostname_replace": "varHOSTIPADDRESS"
+    },
+    "firewall_rules": {
+      "tag": null,
+      "plugins": [
+        null
+      ],
+      "xml_string": "./nat/outbound/rule/source/network",
+      "source_network_search": "CONFIG_LANCIDR",
+      "source_network_replace": "varLANCIDR"
+    },
+    "filer_data": {
+      "tag": "filedata",
+      "plugins": [
+        "base64"
+      ],
+      "xml_string": "./installedpackages/filer/config",
+      "gateway_search": "192.168.42.1",
+      "gateway_replace": "varHOSTIPADDRESS"
+    },
+    "user_data": {
+      "tag": null,
+      "plugins": [
+        null
+      ],
+      "xml_string": "./system/user/name",
+      "username_search": "CONFIG_USER",
+      "username_replace": "varVPNUSER"
+    },
+    "interface_wan": {
+      "tag": null,
+      "plugins": [
+        null
+      ],
+      "xml_string": "./interfaces/wan/if",
+      "interface_search": "vtlan0",
+      "interface_replace": "varWANINTERFACE"
+    },
+    "interface_Lan": {
+      "tag": null,
+      "plugins": [
+        null
+      ],
+      "xml_string": "./interfaces/lan/if",
+      "interface_search": "vtlan0",
+      "interface_replace": "varLANINTERFACE"
+    },
+    "wireguard_tunnel_private_key": {
+      "tag": null,
+      "plugins": [
+        null
+        ],
+      "xml_string": "./installedpackages/wireguard/tunnels/item/privatekey",
+      "nord_private_key_search": "EBsUrudEkaZKyXozwmI+gLbKGh+/wJAgbEvKUjJa0lM=",
+      "nord_private_key_replace": "NORD_PRIVATE_KEY",
+      "surf_private_key_search": "0D6BCbkcmX1YGlz0HLosrl30+IFclCrvePyTVMpSSWI=",
+      "surf_private_key_replace": "SURF_PRIVATE_KEY",
+      "mull_private_key_search": "6AfufR81SNPqYrkJwrAn7OjTzHV+rypIDjGgOuYgyGc=",
+      "mull_private_key_replace": "MULL_PRIVATE_KEY"
+    },
+    "wireguard_tunnel_mtu": {
+      "tag": null,
+      "plugins": [
+        null
+      ],
+      "xml_string": "./installedpackages/wireguard/tunnels/item/mtu",
+      "nord_mtu_search": "CONFIG_NORD_MTU",
+      "nord_mtu_replace": "1500",
+      "surf_mtu_search": "CONFIG_SURF_MTU",
+      "surf_mtu_replace": "1420",
+      "mull_mtu_search": "CONFIG_MULL_MTU",
+      "mull_mtu_replace": "1500"
+    },
+    "wireguard_peer_public_key": {
+      "tag": null,
+      "plugins": [
+        null
+        ],
+      "xml_string": "./installedpackages/wireguard/peers/item/publickey",
+      "nord_public_key_search": "CONFIG_NORD_PUBLIC_KEY",
+      "nord_public_key_replace": "NORD_PUBLIC_KEY",
+      "surf_public_key_search": "CONFIG_SURF_PUBLIC_KEY",
+      "surf_public_key_replace": "SURF_PUBLIC_KEY",
+      "mull_public_key_search": "CONFIG_MULL_PUBLIC_KEY",
+      "mull_public_key_replace": "MULL_PUBLIC_KEY"
+    },
+    "wireguard_endpointS": {
+      "tag": null,
+      "plugins": [
+        null
+      ],
+      "xml_string": "./installedpackages/wireguard/peers/item/endpoint",
+      "nordvpn_endpoint_search": "CONFIG_NORDVPN_ENDPOINT",
+      "nordvpn_endpoint_replace": "NORDVPN_ENDPOINT",
+      "surfshark_endpoint_search": "CONFIG_SURFSHARK_ENDPOINT",
+      "surfshark_endpoint_replace": "SURFSHARK_ENDPOINT",
+      "mullvad_endpoint_search": "CONFIG_MULLVAD_ENDPOINT",
+      "mullvad_endpoint_replace": "MULLVAD_ENDPOINT"
+    },
+    "dhcp_options": {
+      "tag": null,
+      "plugins": [
+        "base64"
+      ],
+      "xml_string": "./dhcp/lan/numberoptions/item/value",
+      "nfs_search": "192.168.42.8",
+      "nfs_replace": "varHOSTIPADDRESS"
+    },
+    "dhcp_range_from": {
+      "tag": null,
+      "plugins": [
+        null
+      ],
+      "xml_string": "./dhcp/lan/range",
+      "range_start_search": "CONFIG_RANGE_START",
+      "range_start_replace": "varRANGE_START",
+      "range_end_search": "CONFIG_RANGE_END",
+      "range_end_replace": "varRANGE_END"
+    },
+    "next_server": {
+      "tag": null,
+      "plugins": [
+        null
+      ],
+      "xml_string": "./dhcp/lan/nextserver",
+      "tftp_server_search": "CONFIG_NEXT_SERVER",
+      "tftp_server_replace": "varNEXT_SERVER"
+    }
+  }
+}
